@@ -1,1 +1,49 @@
-<h1>This is the welcome page</h1>
+
+<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+<%= link_to 'Survey', survey_path(Survey.first) %>
+<%= link_to 'My Profile', users_show_path(current_user) %>
+<h2>Signed in as <%= current_user.email %></h2>
+
+    <section class="main">
+
+        <section class="info">
+            <h2>What we're about</h2>
+            <div class="info-container">
+                <div class="box">
+                    <%= inline_svg "information.svg" %>
+                    <!-- <img src="./img/information.svg" alt="Information"> -->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint.</p>
+                </div>
+                <div class="box">
+                    <%= inline_svg "transfer.svg" %>
+                    <!-- <img src="./img/transfer.svg" alt="Transfer"> -->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint.</p>
+                </div>
+                <div class="box">
+                    <%= inline_svg "home.svg", alt: 'Home' %>
+                    <!-- <img src="./img/home.svg" alt="Home"> -->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint.</p>
+                </div>
+            </div>
+        </section>
+        <section class="signup-2">
+            <h2>Lets start shall we</h2>
+            <div class="signup">
+              <%= link_to 'Sign Up', new_user_registration_path, class: "btn" %>
+                <!-- <button type="button" class="btn">Signup</button> -->
+                <span>or</span>
+                <%= link_to 'Login', new_user_session_path , class: "btn" %>
+            </div>
+        </section>
+    </section>
+    <section class="resources">
+        <h2>Resources</h2>
+        <div class="link1">
+            <h3>Title</h3>
+            <ul>
+                <li>Link</li>
+                <li>Link</li>
+                <li>Link</li>
+            </ul>
+        </div>
+    </section>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
   devise_for :users
 
 
@@ -7,4 +9,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/survey', to: 'surveys#new'
+
+
 end

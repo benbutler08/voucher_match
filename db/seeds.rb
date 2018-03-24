@@ -5,4 +5,8 @@ end
 
 3.times do
   Survey.create(name: Faker::Commerce.department)
-end 
+end
+
+10.times do
+  Question.create(inquiry: Faker::TheFreshPrinceOfBelAir.quote)
+end

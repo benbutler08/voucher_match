@@ -1,3 +1,3 @@
 class Match < ApplicationRecord
-  has_many :candidates
+  has_many :users
 end

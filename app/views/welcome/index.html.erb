@@ -1,20 +1,88 @@
 
-<header class="header-container">
-    <div class="atop">
-        <div class="left">
-            <h1>RUUMY</h1>
+
+    <nav>
+        <div class="nav-top">
+            <h1 class="brand">RUUMY</h1>
+            <img class="hamburger" src="./img/menu.svg" alt="menu">
         </div>
-        <div class="right">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores, magni! Voluptatem velit quas temporibus, placeat,
-              nisi eius dignissimos necessitatibus possimus quis aspernatur
-              assumenda cupiditate deserunt nostrum mollitia amet iste est?
-            </p>
+        <ul>
+            <li class="active">Logout</li>
+            <li>Survey</li>
+            <li>My Profile</li>
+            <li>Login</li>
+            <li>Signup</li>
+        </ul>
+    </nav>
+    <header class="header-container">
+        <div class="atop">
+            <div class="left">
+                <h1>RUUMY</h1>
+            </div>
+            <div class="right">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, magni! Voluptatem velit quas temporibus, placeat, nisi eius dignissimos necessitatibus possimus quis aspernatur assumenda cupiditate deserunt nostrum mollitia amet iste est?</p>
+                <div class="signup">
+                  <% if logged_in? %>
+                    <li>
+                      <a href="http://localhost:3000/rapidfire" class="btn" >Suvery</a>
+                    </li>
+                    <br>
+                    <br>
+                    <li>
+                      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn") %>
+                    </li>
+                  <% else %>
+                    <li>
+                      <%= link_to('Sign up', new_user_registration_path, class: "btn") %>
+                    </li>
+                      <br>
+                      <span>or</span>
+                      <br>
+                    <li>
+                      <%= link_to('Login', new_user_session_path, class: "btn", style:"border: 0;")  %>
+                    </li>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="video">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4DjdJydl-ds" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
+    </section>
+    <section class="main">
+        <section class="info">
+            <h2>What we're about</h2>
+            <div class="info-container">
+                <div class="box">
+                  <%= inline_svg "information.svg", class: "inline_svg home"%>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint.</p>
+                </div>
+                <div class="box">
+                  <%= inline_svg "transfer.svg", class: "inline_svg home" %>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint.</p>
+                </div>
+                <div class="box">
+                    <%= inline_svg "home.svg", class: "inline_svg home" %>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint.</p>
+                </div>
+            </div>
+        </section>
+        <section class="signup-2">
+            <h2>Lets start shall we</h2>
             <div class="signup">
               <% if logged_in? %>
-                <li>
-                  <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn") %>
-                </li>
+              <li>
+                <a href="http://localhost:3000/rapidfire" class="btn" >Suvery</a>
+              </li>
+              <br>
+              <br>
+              <li>
+                <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn") %>
+              </li>
               <% else %>
                 <li>
                   <%= link_to('Sign up', new_user_registration_path, class: "btn") %>
@@ -23,60 +91,40 @@
                   <span>or</span>
                   <br>
                 <li>
-                  <%= link_to('Login', new_user_session_path, class: "btn")  %>
+                  <%= link_to('Login', new_user_session_path, class: "btn", style:"border: 0;")  %>
                 </li>
                 <% end %>
             </div>
-        </div>
-    </div>
-    <section class="main">
-
-        <section class="info">
-            <h2>What we're about</h2>
-            <div class="info-container">
-                <div class="box">
-                    <%= inline_svg "information.svg", class: "inline_svg home" %>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint.</p>
-                </div>
-                <div class="box">
-                    <%= inline_svg "transfer.svg", class: "inline_svg home" %>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint.</p>
-                </div>
-                <div class="box">
-                    <%= inline_svg "home.svg", alt: 'Home', class: "inline_svg home" %>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint.</p>
-                </div>
-            </div>
-        </section>
-        <section class="signup-2">
-            <h2>Lets start shall we</h2>
-            <div class="signup">
-                  <% if logged_in? %>
-                    <li>
-                      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn") %>
-                    </li>
-                  <% else %>
-                    <li>
-                      <%= link_to 'Sign Up', new_user_registration_path, class: "btn" %>
-                    </li>
-                      <br>
-                      <span>or</span>
-                      <br>
-                    <li>
-                      <%= link_to('Login', new_user_session_path, class: "btn")  %>
-                    </li>
-                <% end %>
-                </div>
         </section>
     </section>
     <section class="resources">
         <h2>Resources</h2>
-        <div class="link1">
-            <h3>Title</h3>
-            <ul>
-                <li>Link</li>
-                <li>Link</li>
-                <li>Link</li>
-            </ul>
+        <div class="links-container">
+            <div class="link">
+                <h3>Housing</h3>
+                <ul>
+                    <li><a href="https://www.hudexchange.info/resource/4868/affh-raw-data/">Housing and Urban Development</a></li>
+                     <li><a href="https://www.zillow.com/research/data/">Zillow</a></li>
+                    <li><a href="https://mcmap.org/qol/">Mecklenburg Quality of Life</a></li>
+                     <li><a href="https://factfinder.census.gov/faces/nav/jsf/pages/download_center.xhtml">Census</a></li>
+                    <li><a href="https://egis-hud.opendata.arcgis.com/datasets/8d45c34f7f64433586ef6a448d00ca12_0?geometry=97.375%2C12.813%2C71.887%2C54.725">Housing Choice Vouchers</a></li>
+                    <li><a href="http://preservationdatabase.org/">National Housing Preservation Database</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Economics</h3>
+                <ul>
+                    <li><a href="https://www.consumerfinance.gov/data-research/mortgage-performance-trends/download-the-data/">Consumer Financial Protection Bureau</a></li>
+                     <li><a href="https://lehd.ces.census.gov/data/j2j_beta.html">Business Patterns</a></li>
+                    <li><a href="http://maps.co.mecklenburg.nc.us/openmapping/data.html">Tax Parcel with CAMA Data</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Education</h3>
+                <ul>
+                    <li><a href="http://www.ncpublicschools.org/fbs/accounting/data/">North Carolina School Board</a></li>
+                     <li><a href="https://catalog.data.gov/dataset/2010-school-survey-on-crime-and-safety">Survey on US Public Schools</a></li>
+                </ul>
+            </div>
         </div>
     </section>

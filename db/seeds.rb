@@ -10,3 +10,5 @@ end
 10.times do
   Survey.first.questions.create(inquiry: 'Test question?')
 end
+
+Candidate.create(name: 'Ben', email: 'ben@example.com', password: 'Asdf123')

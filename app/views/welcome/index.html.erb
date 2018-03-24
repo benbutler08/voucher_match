@@ -1,26 +1,44 @@
 
 <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-<%= link_to 'Survey', survey_path(Survey.first) %>
 <%= link_to 'My Profile', users_show_path(current_user) %>
 <h2>Signed in as <%= current_user.email %></h2>
 
+
+<header class="header-container">
+    <div class="atop">
+        <div class="left">
+            <h1>RUUMY</h1>
+        </div>
+        <div class="right">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores, magni! Voluptatem velit quas temporibus, placeat,
+              nisi eius dignissimos necessitatibus possimus quis aspernatur
+              assumenda cupiditate deserunt nostrum mollitia amet iste est?
+            </p>
+            <div class="signup">
+                <%= link_to 'Sign Up', new_user_registration_path, class: "btn" %>
+                <span>or</span>
+                <%= link_to 'Login', new_user_session_path, class: "btn" %>
+            </div>
+        </div>
+    </div>
     <section class="main">
 
         <section class="info">
             <h2>What we're about</h2>
             <div class="info-container">
                 <div class="box">
-                    <%= inline_svg "information.svg" %>
+                    <%= inline_svg "information.svg", class: "inline_svg home" %>
                     <!-- <img src="./img/information.svg" alt="Information"> -->
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint.</p>
                 </div>
                 <div class="box">
-                    <%= inline_svg "transfer.svg" %>
+                    <%= inline_svg "transfer.svg", class: "inline_svg home" %>
                     <!-- <img src="./img/transfer.svg" alt="Transfer"> -->
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint.</p>
                 </div>
                 <div class="box">
-                    <%= inline_svg "home.svg", alt: 'Home' %>
+                    <%= inline_svg "home.svg", alt: 'Home', class: "inline_svg home" %>
                     <!-- <img src="./img/home.svg" alt="Home"> -->
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sint.</p>
                 </div>

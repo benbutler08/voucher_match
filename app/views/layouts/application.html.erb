@@ -13,24 +13,11 @@
   </head>
 
   <body>
-    <header class="header-container">
-        <div class="atop">
-            <div class="left">
-                <h1>RUUMY</h1>
-            </div>
-            <div class="right">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, magni! Voluptatem velit quas temporibus, placeat, nisi eius dignissimos necessitatibus possimus quis aspernatur assumenda cupiditate deserunt nostrum mollitia amet iste est?</p>
-                <div class="signup">
-                    <%= link_to 'Sign Up', new_user_registration_path, class: "btn" %>
-                    <span>or</span>
-                    <%= link_to 'Login', new_user_session_path, class: "btn" %>
-                </div>
-            </div>
-        </div>
+
     </header>
     <%= yield %>
     <footer>
-        <h2>Made with <%= inline_svg "like.svg" %> by CLT Devs</h2>
+        <h2>Made with <%= inline_svg "like.svg", class: "inline_svg" %> by CLT Devs</h2>
     </footer>
   </body>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

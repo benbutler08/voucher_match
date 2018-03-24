@@ -470,3 +470,13 @@
      -webkit-flex-direction: row;
          -ms-flex-direction: row;
              flex-direction: row; } }
+
+  .inline_svg {
+    height: 1em;
+    width: 1em;
+  }
+  .inline_svg.home {
+    height: 5em;
+    width: 5em;
+    margin: 1em;
+  }

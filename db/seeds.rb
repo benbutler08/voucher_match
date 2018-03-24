@@ -3,6 +3,10 @@
     password: 'Asdf123')
 end
 
-3.times do
+1.times do
   Survey.create(name: Faker::Commerce.department)
-end 
+end
+
+10.times do
+  Survey.first.questions.create(inquiry: 'Test question?')
+end

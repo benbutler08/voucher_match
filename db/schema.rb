@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180324061017) do
+ActiveRecord::Schema.define(version: 20180324065028) do
 
   create_table "candidates", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "email"
-    t.string "password"
     t.string "password_digest"
   end
 
@@ -27,9 +26,11 @@ ActiveRecord::Schema.define(version: 20180324061017) do
   end
 
   create_table "questions", force: :cascade do |t|
+    t.integer "survey_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "inquiry"
+    t.index ["survey_id"], name: "index_questions_on_survey_id"
   end
 
   create_table "responses", force: :cascade do |t|

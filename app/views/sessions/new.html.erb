@@ -1,10 +1,20 @@
 <h1>Log In</h1>
 <p id="notice"><%= notice %></p>
 
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit 'Log In' %>
-<% end %>
+<div class="new_form">
+  <%= form_for(:session, url: login_path) do |f| %>
+  <div class="field">
+    <%= f.label :email, class: "label" %>
+    <%= f.email_field :email, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: "label" %>
+    <%= f.password_field :password, class: "input" %>
+  </div>
+
+    <div class="field">
+      <%= f.submit 'Log In' %>
+    </div>
+  <% end %>
+</div>

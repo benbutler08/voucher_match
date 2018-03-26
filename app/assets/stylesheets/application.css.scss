@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ @import "bulma";
  */
  // Modules
  // colors
@@ -617,4 +618,71 @@ button::-moz-focus-inner {
     height: 5em;
     width: 5em;
     margin: 1em;
+  }
+  .new_user {
+    height: 100vh;
+    background: url('https://source.unsplash.com/IhnV68HufN4') no-repeat center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    color: $black;
+
+    &:after {
+      content: '';
+      background: linear-gradient(
+        to bottom,
+        rgba($pink, 1) 0%,
+        rgba($blue, 0.5) 100%
+      );
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+  }
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .frm-group {
+      display: flex;
+    }
+    form {
+      &:last-child {
+        margin-top: 20px;
+      }
+      z-index: 2;
+      position: relative;
+      background: rgba($white, 0.8);
+      padding: 0 10px;
+
+      h2 {
+        margin: 0;
+        font-family: $Roboto;
+        font-size: 3em;
+      }
+
+      label {
+        font-family: $Sans;
+        font-size: 1.4em;
+      }
+
+      input {
+        padding: 20px 10px;
+        width: 400px;
+        margin: 5px 0;
+        font-size: 1.3em;
+      }
+      .submit-btn {
+        background: $blue;
+        color: $white;
+        font-size: 2em;
+        width: 100%;
+        padding: 20px;
+        margin: 20px 0;
+
+
+      }
+    }
   }

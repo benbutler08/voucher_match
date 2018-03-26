@@ -20,6 +20,7 @@ gem 'devise'
 gem 'inline_svg'
 gem 'rapidfire'
 gem 'capistrano-rails', group: :development
+gem "bulma-rails", "~> 0.6.2"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
